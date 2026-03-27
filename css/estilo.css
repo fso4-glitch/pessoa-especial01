@@ -1,38 +1,82 @@
 body {
-  background: linear-gradient(to right, #ffdde1, #ee9ca7);
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: verdana;
+  background: linear-gradient(180deg, #ffd6e7, #ffeef5);
   text-align: center;
 }
 
 .container {
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  width: 300px;
+  max-width: 600px;
   margin: 50px auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 h1 {
-  color: #ff4d6d;
+  color: #ff4d88;
+}
+
+.area {
+  position: relative;
+  display: inline-block;
 }
 
 .masha {
-  width: 200px;
+  width: 250px;
   border-radius: 20px;
-  margin: 15px 0;
-
-  /* ANIMAÇÃO */
-  animation: pulse 1.5s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
 
-p {
-  font-size: 16px;
-  color: #555;
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: subir 3s infinite;
+  opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+.heart:nth-child(2) { left: 20px; animation-delay: 1s; }
+.heart:nth-child(3) { left: 80px; animation-delay: 2s; }
+.heart:nth-child(4) { left: 140px; animation-delay: 1.5s; }
+.heart:nth-child(5) { left: 200px; animation-delay: 0.5s; }
+
+@keyframes subir {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 150px;
+    opacity: 0;
+  }
 }
