@@ -10,7 +10,7 @@
 <body>
   <div class="container">
 
-    <h1>💖 Maria Vitoria 💖</h1>
+    <h1>💖 Masha 💖</h1>
 
     <div class="area">
       <img src="img/masha-coracao.png" class="masha">
@@ -21,7 +21,7 @@
       <span class="heart h4">💕</span>
     </div>
 
-    <p>Ei princesa… se ninguém te falou isso hoje, deixa eu te lembrar 🥺💖</p>
+    <p>ei princesa… se ninguém te falou isso hoje, deixa eu te lembrar 🥺💖</p>
     <p>você é linda, do jeitinho que é</p>
     <p>você é importante, mais do que imagina</p>
     <p>você é especial, de um jeito único</p>
@@ -29,10 +29,25 @@
     <p>você é suficiente, sempre foi</p>
     <p>e acima de tudo… você é maravilhosa 💕✨</p>
 
-    <audio controls>
+    <!-- MÚSICA -->
+    <audio id="musica" autoplay loop>
       <source src="audio/raidance.mp3" type="audio/mpeg">
     </audio>
 
   </div>
+
+  <!-- SCRIPT PRA GARANTIR QUE TOQUE -->
+  <script>
+    const musica = document.getElementById("musica");
+
+    document.addEventListener("click", function() {
+      musica.play();
+    });
+
+    musica.play().catch(() => {
+      console.log("Autoplay bloqueado, aguarda clique...");
+    });
+  </script>
+
 </body>
 </html>
