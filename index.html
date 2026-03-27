@@ -29,20 +29,24 @@
     <p>você é suficiente, sempre foi</p>
     <p>e acima de tudo… você é maravilhosa 💕✨</p>
 
-    <!-- PLAYER DE MÚSICA -->
-    <audio id="musica" controls loop>
+    <!-- MÚSICA -->
+    <audio id="musica" autoplay loop>
       <source src="audio/raidance.mp3" type="audio/mpeg">
     </audio>
 
   </div>
 
-  <!-- SCRIPT PRA TOCAR AO CLICAR -->
+  <!-- SCRIPT PRA GARANTIR QUE TOQUE -->
   <script>
     const musica = document.getElementById("musica");
 
-    document.addEventListener("click", function () {
+    document.addEventListener("click", function() {
       musica.play();
-    }, { once: true });
+    });
+
+    musica.play().catch(() => {
+      console.log("Autoplay bloqueado, aguarda clique...");
+    });
   </script>
 
 </body>
